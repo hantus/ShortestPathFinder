@@ -1,0 +1,48 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.canvas.Canvas?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top  >
+        <HBox style="-fx-padding: 15; -fx-background-color: mediumspringgreen" >
+            <Label text="Enter file name: "></Label>
+            <TextField fx:id="fileName" promptText="file name" ></TextField>
+            <Label text="   Select mode: "></Label>
+            <fx:define>
+                <ToggleGroup fx:id="modeToggleGroup"/>
+            </fx:define>
+            <VBox>
+                <RadioButton fx:id="radioStep"  text="Step by step   " toggleGroup="$modeToggleGroup" selected="true"></RadioButton>
+                <RadioButton fx:id="radioAuto" text="Automatic" toggleGroup="$modeToggleGroup"></RadioButton>
+            </VBox>
+            <Button text="Find Path" onAction="#onButtonClicked"></Button>
+        </HBox>
+    </top>
+    <center  >
+        <GridPane fx:id="mapCanvas" style="-fx-padding: 10">
+
+        </GridPane>
+        <!--<VBox fx:id="" style="-fx-padding: 20">-->
+
+        <!--</VBox>-->
+    </center>
+    <bottom >
+        <VBox>
+
+            <Button text="Next" fx:id="nextButton" VBox.vgrow="ALWAYS"  visible="false" onAction="#onNextButtonClicked"></Button>
+            <TextArea fx:id="textArea"  VBox.vgrow="ALWAYS"  ></TextArea>
+        </VBox>
+    </bottom>
+
+</BorderPane>
